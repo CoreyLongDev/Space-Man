@@ -47,3 +47,6 @@ body {
   width: 3rem;
   text-align: center;
 }
+.spacer {
+  margin-top: 15px;
+}

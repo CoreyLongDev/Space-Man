@@ -33,11 +33,13 @@
     
     <div class="container">
         <span id="answerHeader">Guess a Letter at a time!</span>
-        <form action="#">
+        <form id="answerSubmit" action="#">
             <label for="answer"></label>
             <input type="text" id="answer" name="answer" maxlength="1">
         </form>
         <br>
+        <input type="submit" onclick="checkAnswer()" class="gameButtons" id="answerSubmit" name="answer" value="SUBMIT ANSWER">
+        <div class="spacer"></div>
       <button class="gameButtons" onclick="startGame()">START</button>
       <button class="gameButtons" onclick="resetGame()">RESET</button>
     </div>

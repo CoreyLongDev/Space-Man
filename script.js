@@ -57,3 +57,10 @@ function letterInput(letter) {
   const form = document.querySelector("form");
   form.appendChild(newInput);
 }
+/////////////////
+//answer check//
+///////////////
+function checkAnswer() {
+ let answer = document.querySelector('answer')
+ console.log(answer)
+}

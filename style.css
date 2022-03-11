@@ -26,7 +26,7 @@ body {
 .letter {
   width: 2rem;
   background-color: red;
-  color: #d0d0d0;
+  color: red;
   font-size: 32px;
 }
 #letterBoard {
@@ -37,4 +37,13 @@ body {
   /* margin-bottom: -10%; */
   margin-top: 15vh;
   margin-left: 15vw;
+}
+#answerHeader {
+  font-size: 50px;
+  color: #d0d0d0;
+}
+#answer {
+  font-size: 40px;
+  width: 3rem;
+  text-align: center;
 }

@@ -7,7 +7,7 @@
 // thirdHP.style.display = 'none'
 // letter.style.display = 'none'
 let word = "";
-this.form['form'].style.display = 'none';
+
 ////////////////////////////
 //start and reset buttons// -- WORKING, ADDITIONS NEEDED
 //////////////////////////
@@ -15,10 +15,10 @@ this.form['form'].style.display = 'none';
 function startGame() {
   event.preventDefault();
   //WHY THE HELL IS THIS DISREGARDING THE CSS FILES INSTRUCTIONS
-  // firstHP.style.display = 'block'
-  // secondHP.style.display = 'block'
-  // thirdHP.style.display = 'block'
-  // letter.style.display = 'block'
+//   firstHP.style.display = 'block'
+//   secondHP.style.display = 'block'
+//   thirdHP.style.display = 'block'
+//   letter.style.display = 'block'
   getWord();
 }
 function resetGame() {
@@ -38,7 +38,7 @@ function getWord(event) {
     .then((res) => {
       //push fetch to value
       word = res.pop();
-      console.log(word.split(""));
+    //   console.log(word.split(""));
       word.split("").forEach((char) => letterInput(char));
     });
 }

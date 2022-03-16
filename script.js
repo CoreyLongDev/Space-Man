@@ -1,15 +1,15 @@
 ////////////////////////
 //pregame and globals//
 //////////////////////
-alert(`Welcome to SpaceMan.
+// alert(`Welcome to SpaceMan.
 
-Press the start button to begin.
-Upon starting the game you'll be given a hidden word.
-Guess the letters to reveal the hidden word.
+// Press the start button to begin.
+// Upon starting the game you'll be given a hidden word.
+// Guess the letters to reveal the hidden word.
 
-CAREFUL...
-too many guesses can lead your astronaut astray..
-`);
+// CAREFUL...
+// too many guesses can lead your astronaut astray..
+// `);
 
 //globals
 let word = "";
@@ -66,9 +66,9 @@ function checkAnswer() {
   for (i = 0; i < newBlocks.length; i++) {
     if (answer == newBlocks[i]) {
       console.log(`${answer} is correct. its located at ${i}`);
-      blocks2Array.innerText += newBlocks[i];
+      blocks2Array[i].innerText = answer
       blocks2Array[i].style.border = `5px solid green`;
-      blocks2Array[i].style.color = `green`;
+      blocks2Array[i].style.color = `#d0d0d0`;
     }
   }
 } //end of function

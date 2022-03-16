@@ -16,7 +16,6 @@ body {
 }
 .container {
   text-align: center;
-  margin-top: 40vh;
 }
 .gameButtons {
   letter-spacing: 10px;
@@ -28,8 +27,8 @@ body {
 }
 .divLetter {
   border: solid 5px red;
-  color: white;
-  font-size: 32px;
+  color: #d0d0d0;
+  font-size: 75px;
   display: inline-block;
   width: 5rem;
   height: 5rem;
@@ -52,4 +51,9 @@ body {
 }
 .spacer {
   margin-top: 15px;
+}
+img {
+  display: block;
+  margin: auto;
+  width: 50%;
 }

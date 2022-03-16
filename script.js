@@ -16,6 +16,7 @@ let word = "";
 let health = 3;
 let answerCount = null;
 let checkIfCorrect = 0;
+let damageFlag = false;
 
 ////////////////////////////
 //start and reset buttons//
@@ -73,10 +74,8 @@ function checkAnswer() {
       blocks2Array[i].style.border = `5px solid green`;
       checkIfCorrect += 1;
       checkForWin();
-      } 
-      //if (answer !== newBlocks) {
-    //   health = health - 1;
-    //   console.log(health)
+    } //else {
+    //   damageFlag = true;
     // }
   }
 } //end of function
@@ -97,6 +96,11 @@ function checkForWin() {
 //////////////////////
 //losing conditions//
 ////////////////////
+
+//damage flag operation
+// if(damageFlag = true){
+//   return health -= 1
+// }
 
 if (health === 2) {
   //change to slightly damaged astronaut IMG

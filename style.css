@@ -23,18 +23,18 @@ body {
   background-color: red;
   color: white;
 }
-.letter {
-  width: 2rem;
-  background-color: red;
-  color: red;
-  font-size: 32px;
-}
 #letterBoard {
   text-align: center;
-  /* max-width: 40%; */
+}
+.divLetter {
+  border: solid 5px red;
+  color: white;
+  font-size: 32px;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
 }
 .health {
-  /* margin-bottom: -10%; */
   margin-top: 15vh;
   margin-left: 15vw;
 }
@@ -46,6 +46,9 @@ body {
   font-size: 40px;
   width: 3rem;
   text-align: center;
+  border: solid 5px red;
+  background-color: #d0d0d0;
+  color: red;
 }
 .spacer {
   margin-top: 15px;

@@ -15,6 +15,7 @@
 let word = "";
 let health = 3;
 let answerCount = null;
+let checkIfCorrect = 0;
 
 ////////////////////////////
 //start and reset buttons//
@@ -44,6 +45,7 @@ function getWord(event) {
 
     .then((res) => {
       word = res.pop().toUpperCase();
+      //leave console.log for permanent reference//
       console.log(`The Answer Is ${word}`);
 
       for (let i = 0; i < word.length; i++) {
@@ -64,13 +66,13 @@ function checkAnswer() {
   let blocks2Array = document.querySelectorAll(".divLetter");
   newBlocks = Array.from(blocks2Array).map((x) => x.getAttribute("name"));
   answerCount = newBlocks.length;
-  console.log(answerCount);
 
   for (i = 0; i < newBlocks.length; i++) {
-    if (answer == newBlocks[i]) {
-      console.log(`${answer} is correct. its located at ${i}`);
+    if (answer === newBlocks[i]) {
       blocks2Array[i].innerText = answer;
       blocks2Array[i].style.border = `5px solid green`;
+      checkIfCorrect += 1;
+      checkForWin();
     }
   }
 } //end of function
@@ -78,3 +80,9 @@ function checkAnswer() {
 ///////////////////////
 //winning conditions//
 /////////////////////
+
+function checkForWin() {
+  if (checkIfCorrect === answerCount) {
+    console.log("Victory");
+  }
+}

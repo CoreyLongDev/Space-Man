@@ -73,7 +73,11 @@ function checkAnswer() {
       blocks2Array[i].style.border = `5px solid green`;
       checkIfCorrect += 1;
       checkForWin();
-    }
+      } 
+      //if (answer !== newBlocks) {
+    //   health = health - 1;
+    //   console.log(health)
+    // }
   }
 } //end of function
 
@@ -83,6 +87,28 @@ function checkAnswer() {
 
 function checkForWin() {
   if (checkIfCorrect === answerCount) {
-    console.log("Victory");
+    victoryBanner = document.getElementById("subTitle");
+    victoryBanner.style.fontSize = "75px";
+    victoryBanner.style.color = "green";
+    victoryBanner.innerText = "!! VICTORY !!";
   }
+}
+
+//////////////////////
+//losing conditions//
+////////////////////
+
+if (health === 2) {
+  //change to slightly damaged astronaut IMG
+}
+if (health === 1) {
+  //change to increasingly damages astronaut IMG
+}
+if (health === 0) {
+  loserBanner = document.getElementById("subTitle");
+  loserBanner.style.fontSize = "75px";
+  loserBanner.style.color = "red";
+  loserBanner.innerText = `Your Astronaut Has Vanished..
+  
+  GAME OVER`;
 }

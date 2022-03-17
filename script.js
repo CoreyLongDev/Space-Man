@@ -16,6 +16,7 @@ let word = "";
 let health = 3;
 let answerCount = null;
 let checkIfCorrect = 0;
+let astroChanger = document.querySelector('#astroIMG')
 
 ////////////////////////////
 //start and reset buttons//
@@ -60,6 +61,7 @@ function getWord(event) {
 //answer check//
 ///////////////
 
+//check user guess
 function checkAnswer() {
   let answer = document.getElementById("answer").value.toUpperCase();
   let blocks2Array = document.querySelectorAll(".divLetter");
@@ -70,19 +72,30 @@ function checkAnswer() {
   if (!word.includes(answer)) {
     health = health - 1;
   }
+  if (health === 2) {
+    console.log("you took a hit!");
+    astroChanger.src = `Images/moonwalker2.png`
+  }
+  if (health === 1) {
+    console.log("about to lose");
+    astroChanger.src = `Images/moonwalker1.png`
+  }
   if (health === 0) {
     loserBanner = document.getElementById("subTitle");
     loserBoard = document.getElementById("letterBoard");
     loserButton = document.getElementById("answerSubmit");
+    astroMan = document.getElementById("astroIMG");
     loserButton.style.display = "none";
     loserBoard.style.display = "none";
     loserBanner.style.fontSize = "75px";
     loserBanner.style.color = "red";
+    answerHeader.innerText = "Hit Reset to Try Again!";
+    astroMan.style.display = "none";
     loserBanner.innerText = `Your Astronaut Has Drifted Away
     
     GAME OVER`;
   }
-
+  //inject correct answer into block
   for (i = 0; i < newBlocks.length; i++) {
     if (answer === newBlocks[i]) {
       blocks2Array[i].innerText = answer;
@@ -91,10 +104,10 @@ function checkAnswer() {
       checkForWin();
     }
   }
-} //end of function
+}
 
 ///////////////////////
-//winning conditions//
+//winning condition//
 /////////////////////
 
 function checkForWin() {

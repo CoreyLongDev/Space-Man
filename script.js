@@ -16,7 +16,6 @@ let word = "";
 let health = 3;
 let answerCount = null;
 let checkIfCorrect = 0;
-let damageFlag = false;
 
 ////////////////////////////
 //start and reset buttons//
@@ -53,7 +52,6 @@ function getWord(event) {
         const div = document.createElement("div");
         div.setAttribute("name", word[i]);
         div.classList.add("divLetter");
-        // console.log(div.getAttribute("name"));
         document.querySelector("#letterBoard").append(div);
       }
     });
@@ -68,15 +66,30 @@ function checkAnswer() {
   newBlocks = Array.from(blocks2Array).map((x) => x.getAttribute("name"));
   answerCount = newBlocks.length;
 
+  //damage check
+  if (!word.includes(answer)) {
+    health = health - 1;
+  }
+  if (health === 0) {
+    loserBanner = document.getElementById("subTitle");
+    loserBoard = document.getElementById("letterBoard");
+    loserButton = document.getElementById("answerSubmit");
+    loserButton.style.display = "none";
+    loserBoard.style.display = "none";
+    loserBanner.style.fontSize = "75px";
+    loserBanner.style.color = "red";
+    loserBanner.innerText = `Your Astronaut Has Drifted Away
+    
+    GAME OVER`;
+  }
+
   for (i = 0; i < newBlocks.length; i++) {
     if (answer === newBlocks[i]) {
       blocks2Array[i].innerText = answer;
       blocks2Array[i].style.border = `5px solid green`;
       checkIfCorrect += 1;
       checkForWin();
-    } //else {
-    //   damageFlag = true;
-    // }
+    }
   }
 } //end of function
 
@@ -91,28 +104,4 @@ function checkForWin() {
     victoryBanner.style.color = "green";
     victoryBanner.innerText = "!! VICTORY !!";
   }
-}
-
-//////////////////////
-//losing conditions//
-////////////////////
-
-//damage flag operation
-// if(damageFlag = true){
-//   return health -= 1
-// }
-
-if (health === 2) {
-  //change to slightly damaged astronaut IMG
-}
-if (health === 1) {
-  //change to increasingly damages astronaut IMG
-}
-if (health === 0) {
-  loserBanner = document.getElementById("subTitle");
-  loserBanner.style.fontSize = "75px";
-  loserBanner.style.color = "red";
-  loserBanner.innerText = `Your Astronaut Has Vanished..
-  
-  GAME OVER`;
 }

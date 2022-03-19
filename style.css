@@ -16,6 +16,9 @@ body {
 }
 .container {
   text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .gameButtons {
   letter-spacing: 10px;
@@ -32,10 +35,6 @@ body {
   display: inline-block;
   width: 5rem;
   height: 5rem;
-}
-.health {
-  margin-top: 15vh;
-  margin-left: 15vw;
 }
 #answerHeader {
   font-size: 50px;
@@ -54,8 +53,9 @@ body {
 }
 #astroIMG {
   display: block;
-  margin-left: auto;
-  margin-right: 545px;
+  /* temporary fix to center space man. */
+  margin-left: 28.5vw;
+  margin-right: 55vw;
   width: 40%;
 }
 footer {

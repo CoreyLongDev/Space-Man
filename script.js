@@ -1,22 +1,22 @@
 ////////////////////////
 //pregame and globals//
 //////////////////////
-// alert(`Welcome to SpaceMan.
+alert(`Welcome to SpaceMan.
 
-// Press the start button to begin.
-// Upon starting the game you'll be given a hidden word.
-// Guess the letters to reveal the hidden word.
+Press the start button to begin.
+Upon starting the game you'll be given a hidden word.
+Guess the letters to reveal the hidden word.
 
-// CAREFUL...
-// too many guesses can lead your astronaut astray..
-// `);
+CAREFUL...
+too many guesses can lead your astronaut astray..
+`);
 
 //globals
 let word = "";
 let health = 3;
 let answerCount = null;
 let checkIfCorrect = 0;
-let astroChanger = document.querySelector('#astroIMG')
+let astroChanger = document.querySelector("#astroIMG");
 
 ////////////////////////////
 //start and reset buttons//
@@ -24,7 +24,6 @@ let astroChanger = document.querySelector('#astroIMG')
 
 //start game
 function startGame() {
-  event.preventDefault();
   getWord();
   startButton.style.display = "none";
   answerHeader.innerText = "Guess a Letter at a time!";
@@ -68,17 +67,20 @@ function checkAnswer() {
   newBlocks = Array.from(blocks2Array).map((x) => x.getAttribute("name"));
   answerCount = newBlocks.length;
 
-  //damage check
+  /////////////////
+  //damage system//
+  /////////////////
+
   if (!word.includes(answer)) {
     health = health - 1;
   }
   if (health === 2) {
     console.log("you took a hit!");
-    astroChanger.src = `Images/moonwalker2.png`
+    astroChanger.src = `Images/moonwalker2.png`;
   }
   if (health === 1) {
     console.log("about to lose");
-    astroChanger.src = `Images/moonwalker1.png`
+    astroChanger.src = `Images/moonwalker1.png`;
   }
   if (health === 0) {
     loserBanner = document.getElementById("subTitle");
